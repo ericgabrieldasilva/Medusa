@@ -1,25 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 
 /* -------------- RESET --------------------- */
-*{
+* {
   margin: 0;
   padding: 0;
   border: none;
   list-style: none;
   box-sizing: border-box;
   text-decoration: none;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
-:root{
+:root {
   --hue: 126;
 
   --color-primary: hsl(var(--hue), 58%, 34%);
   --color-secundary: hsla(var(--hue), 100%, 17%, 0.47);
-  --color-alt: #002C4B;
+  --color-alt: #002c4b;
   --color-background: hsl(235, 24%, 13%);
 
-  --color-text: #FFFFFF;
+  --color-text: #ffffff;
 }
 
 /* -------------- SCROLLBAR EDIT --------------------- */
@@ -36,7 +36,7 @@
   border-radius: 10px;
 }
 
-body{
+body {
   background-color: var(--color-background);
   overflow-x: hidden;
   user-select: none;
@@ -44,7 +44,7 @@ body{
 
 /* -------------- LOADING SCREEN --------------------- */
 .overlay-loading::before,
-.overlay-loading::after{
+.overlay-loading::after {
   content: "";
   width: 100%;
   height: 50%;
@@ -54,27 +54,27 @@ body{
   transform-origin: top;
 }
 
-.overlay-loading::after{
+.overlay-loading::after {
   bottom: 0;
   transform-origin: bottom;
 }
 
 .hide-overlay-loading.overlay-loading::before,
-.hide-overlay-loading.overlay-loading::after{
+.hide-overlay-loading.overlay-loading::after {
   animation: animateHideOverlay 1s ease-in-out forwards;
 }
 
-@keyframes animateHideOverlay{
-  to{
+@keyframes animateHideOverlay {
+  to {
     transform: scaleY(0);
   }
 }
 
-.hide-overlay-loading .loading{
+.hide-overlay-loading .loading {
   display: none;
 }
 
-.loading{
+.loading {
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
@@ -86,22 +86,18 @@ body{
   transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   z-index: 1000;
-  animation: 
-    spinner
-    1s
-    cubic-bezier(1, .015, .295, 1.225)
-    infinite;
+  animation: spinner 1s cubic-bezier(1, 0.015, 0.295, 1.225) infinite;
 }
 
-@keyframes spinner{
-  to{
+@keyframes spinner {
+  to {
     transform: translate(-50%, -50%) rotate(360deg);
     -ms-transform: translate(-50%, -50%) rotate(360deg);
   }
 }
 
 /* -------------- CONTAINER --------------------- */
-.container{
+.container {
   max-width: 1280px;
   height: 100vh;
   max-height: 720px;
@@ -113,38 +109,38 @@ body{
 }
 
 /* -------------- HEADER --------------------- */
-header{
+header {
   display: flex;
   align-items: center;
   gap: 6rem;
 }
 
-body.show-menu #btn-menu{
+body.show-menu #btn-menu {
   transform: rotate(45deg);
 }
 
-#btn-menu{
+#btn-menu {
   cursor: pointer;
   transition: 300ms;
 }
 
-#btn-menu rect:first-child{
+#btn-menu rect:first-child {
   fill: var(--color-primary);
 }
 
-#btn-menu rect:nth-child(2){
+#btn-menu rect:nth-child(2) {
   fill: hsla(var(--hue), 68%, 21%, 1);
 }
 
-#btn-menu rect:last-child{
+#btn-menu rect:last-child {
   fill: hsl(var(--hue), 10%, 23%);
 }
 
-body.show-menu .menu ul{
+body.show-menu .menu ul {
   display: flex;
 }
 
-.menu ul{
+.menu ul {
   display: none;
   align-items: center;
   gap: 1.5rem;
@@ -154,14 +150,14 @@ body.show-menu .menu ul{
   animation: showMenuDesktop 300ms ease forwards;
 }
 
-@keyframes showMenuDesktop{
-  to{
+@keyframes showMenuDesktop {
+  to {
     left: 0;
     opacity: 1;
   }
 }
 
-.menu ul li a{
+.menu ul li a {
   color: var(--color-text);
   text-transform: uppercase;
   font-weight: 700;
@@ -170,7 +166,7 @@ body.show-menu .menu ul{
 }
 
 .menu ul li a::before,
-.see-more > a:last-child::before{
+.see-more > a:last-child::before {
   content: "";
   position: absolute;
   left: 0;
@@ -183,23 +179,23 @@ body.show-menu .menu ul{
 
 .menu ul li a.active::before,
 .menu ul li a:hover::before,
-.see-more > a:last-child:hover::before{
+.see-more > a:last-child:hover::before {
   width: 100%;
 }
 
 /* -------------- TEXT --------------------- */
-.text{
+.text {
   margin-left: 2rem;
 }
 
-.text h3{
+.text h3 {
   color: var(--color-text);
   font-size: 1rem;
   font-weight: 700;
   text-transform: uppercase;
 }
 
-.text h1{
+.text h1 {
   color: var(--color-text);
   font-size: 3.625rem;
   font-weight: 700;
@@ -209,7 +205,7 @@ body.show-menu .menu ul{
   margin-block: 0.85rem 1rem;
 }
 
-.text p{
+.text p {
   color: var(--color-text);
   font-size: 1rem;
   line-height: 1.25rem;
@@ -219,13 +215,13 @@ body.show-menu .menu ul{
   opacity: 0.8;
 }
 
-.see-more{
+.see-more {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-.see-more span{
+.see-more span {
   display: inline-block;
   width: 5.25rem;
   height: 5.25rem;
@@ -236,8 +232,17 @@ body.show-menu .menu ul{
   justify-content: center;
 }
 
+.see-more svg {
+  width: 1.6rem;
+  position: absolute;
+}
+
+.see-more path {
+  fill: var(--color-text);
+}
+
 .see-more span::before,
-.see-more span::after{
+.see-more span::after {
   content: "";
   display: inline-block;
   width: 3.375rem;
@@ -245,35 +250,35 @@ body.show-menu .menu ul{
   border-radius: 50%;
 }
 
-.see-more span::before{
+.see-more span::before {
   border: 2px solid #464546;
 }
 
-.see-more span::after{
+.see-more span::after {
   position: absolute;
   background-color: var(--color-text);
   transform: scale(0);
   opacity: 1;
 }
 
-.see-more span:hover::after{
+.see-more span:hover::after {
   animation: animateCircle 1s ease-in-out infinite;
 }
 
-.see-more a span i{
+.see-more a span i {
   position: absolute;
   color: var(--color-text);
   z-index: 1;
 }
 
-@keyframes animateCircle{
-  to{
+@keyframes animateCircle {
+  to {
     transform: scale(1);
     opacity: 0;
   }
 }
 
-.see-more > a{
+.see-more > a {
   color: var(--color-text);
   font-weight: 700;
   font-size: 1rem;
@@ -281,18 +286,18 @@ body.show-menu .menu ul{
 }
 
 /* -------------- PROGRESS BAR --------------------- */
-.progress-bar-page{
+.progress-bar-page {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-.progress-bar-page small{
+.progress-bar-page small {
   color: var(--color-text);
   font-size: 1rem;
 }
 
-.progress-bar-page span{
+.progress-bar-page span {
   display: inline-block;
   max-width: 15rem;
   width: 100%;
@@ -301,7 +306,7 @@ body.show-menu .menu ul{
   position: relative;
 }
 
-.progress-bar-page span::before{
+.progress-bar-page span::before {
   content: "";
   display: inline-block;
   position: absolute;
@@ -311,7 +316,7 @@ body.show-menu .menu ul{
 }
 
 /* -------------- CIRCLE --------------------- */
-.bottom-circle{
+.bottom-circle {
   width: 10rem;
   height: 10rem;
   background-color: var(--color-primary);
@@ -324,7 +329,7 @@ body.show-menu .menu ul{
   -ms-transform: translateX(-50%);
 }
 
-.circle{
+.circle {
   position: absolute;
   right: 10%;
   top: 50%;
@@ -335,43 +340,47 @@ body.show-menu .menu ul{
   width: 35rem;
   height: 35rem;
   border-radius: 50%;
-  background: 
-    conic-gradient(from 142.31deg at 50% 50%, 
+  background: conic-gradient(
+    from 142.31deg at 50% 50%,
     var(--color-secundary) -127.5deg,
     var(--color-alt) 35.62deg,
     var(--color-secundary) 232.5deg,
-    var(--color-alt) 395.63deg);
+    var(--color-alt) 395.63deg
+  );
   border: 1px solid var(--color-primary);
 }
 
-.circle::before{
+.circle::before {
   content: "";
   width: 100%;
   height: 100%;
-  background:
-    conic-gradient(from 142.31deg at 50% 50%, #258A2F -156.76deg,
+  background: conic-gradient(
+    from 142.31deg at 50% 50%,
+    #258a2f -156.76deg,
     var(--color-alt) 23deg,
     var(--color-primary) 203.24deg,
-    var(--color-alt) 383deg);
+    var(--color-alt) 383deg
+  );
   filter: blur(347.507px);
 }
 
-.circle::after{
+.circle::after {
   content: "";
   width: 110%;
   height: 110%;
-  background: 
-    conic-gradient(from 142.31deg at 50% 50%,
+  background: conic-gradient(
+    from 142.31deg at 50% 50%,
     var(--color-primary) -156.76deg,
     var(--color-secundary) 23deg,
     var(--color-primary) 203.24deg,
-    var(--color-secundary) 383deg);
+    var(--color-secundary) 383deg
+  );
   filter: blur(579.179px);
   position: absolute;
   z-index: -1;
 }
 
-.circle img{
+.circle img {
   width: 140%;
   position: absolute;
   left: -20%;
@@ -379,32 +388,32 @@ body.show-menu .menu ul{
 }
 
 /* -------------- MEDIA QUERIES --------------------- */
-@media screen and (max-width: 1024px){
-  .circle{
+@media screen and (max-width: 1024px) {
+  .circle {
     width: 30rem;
     height: 30rem;
   }
 }
 
-@media screen and (max-width: 976px){
-  .text{
+@media screen and (max-width: 976px) {
+  .text {
     margin: 0;
   }
 
-  .circle{
+  .circle {
     right: 1rem;
     max-width: 25rem;
     max-height: 25rem;
   }
 }
 
-@media screen and (max-width: 767px){
-  .container{
+@media screen and (max-width: 767px) {
+  .container {
     padding: 1rem;
     max-height: 600px;
   }
 
-  .circle{
+  .circle {
     position: relative;
     left: 0;
     bottom: 0;
@@ -412,31 +421,31 @@ body.show-menu .menu ul{
     margin: 4rem auto 0;
   }
 
-  .circle::after{
+  .circle::after {
     width: 100%;
     height: 100%;
   }
 
-  .circle img{
+  .circle img {
     width: 100%;
     left: 0;
   }
 
-  .bottom-circle{
+  .bottom-circle {
     display: none;
   }
 }
 
-@media screen and (max-width: 400px){
-  body.show-menu{
+@media screen and (max-width: 400px) {
+  body.show-menu {
     overflow-y: hidden;
   }
 
-  #btn-menu{
+  #btn-menu {
     z-index: 11;
   }
 
-  .menu ul{
+  .menu ul {
     background-color: var(--color-background);
     width: 100%;
     height: 100%;
@@ -448,14 +457,14 @@ body.show-menu .menu ul{
     padding-top: 3rem;
   }
 
-  @keyframes showMenuDesktop{
-    to{
+  @keyframes showMenuDesktop {
+    to {
       top: 0;
       opacity: 1;
     }
   }
 
-  .circle{
+  .circle {
     width: 100%;
     height: 100vw;
   }
